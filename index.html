@@ -1,69 +1,389 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#10121c">
-  <title>NTL Launcher</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Arial, sans-serif;
-      color: white;
-      background: linear-gradient(135deg, #10121c, #192d49);
-      text-align: center;
-      padding: 20px;
-    }
+<title>NTL Launcher - Minecraft Java</title>
 
-    .launcher {
-      width: 100%;
-      max-width: 420px;
-      padding: 30px 20px;
-      background: #202638;
-      border: 1px solid #37445f;
-      border-radius: 20px;
-    }
+<meta name="theme-color" content="#080d18">
 
-    h1 {
-      color: #55e6a5;
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    p {
-      color: #c8d0e0;
-      line-height: 1.6;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    button {
-      margin-top: 18px;
-      padding: 14px 24px;
-      border: none;
-      border-radius: 10px;
-      background: #55e6a5;
-      color: #10121c;
-      font-size: 16px;
-      font-weight: bold;
-    }
-  </style>
+body {
+  background: #080d18;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  padding: 16px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #101827;
+  border-bottom: 1px solid #26354b;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 23px;
+  font-weight: bold;
+  color: #50f5a9;
+}
+
+.logo-icon {
+  width: 44px;
+  height: 44px;
+  border: 2px solid #50f5a9;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #50f5a9;
+  font-weight: 900;
+  box-shadow: 0 0 15px #50f5a933;
+}
+
+nav a {
+  color: #d7e0ef;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.hero {
+  text-align: center;
+  padding: 85px 20px 70px;
+  background:
+    radial-gradient(ellipse at top, #163b42, transparent 65%),
+    #080d18;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid #50f5a9;
+  border-radius: 30px;
+  color: #50f5a9;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: clamp(42px, 9vw, 72px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+h1 span {
+  color: #50f5a9;
+}
+
+.hero p {
+  color: #b4c2d8;
+  max-width: 580px;
+  margin: 0 auto 28px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 23px;
+  border-radius: 9px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: #50f5a9;
+  color: #07130e;
+}
+
+.secondary {
+  border: 1px solid #40516a;
+  color: #ffffff;
+}
+
+.note {
+  font-size: 12px;
+  color: #93a3b8;
+  margin-top: 17px;
+}
+
+section {
+  padding: 55px 6%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.section-desc {
+  text-align: center;
+  color: #9eafc5;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit, minmax(220px, 1fr)
+  );
+  gap: 18px;
+}
+
+.card {
+  background: #101827;
+  border: 1px solid #26354b;
+  border-radius: 15px;
+  padding: 24px;
+}
+
+.card .icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  color: #50f5a9;
+}
+
+.card p {
+  color: #aebbd0;
+  font-size: 14px;
+}
+
+.download-box {
+  text-align: center;
+  background: #101827;
+  border: 1px solid #50f5a9;
+  border-radius: 18px;
+  padding: 35px 20px;
+}
+
+.download-box p {
+  color: #b4c2d8;
+  margin: 10px auto 22px;
+}
+
+footer {
+  text-align: center;
+  padding: 28px 15px;
+  color: #8c9bb0;
+  border-top: 1px solid #26354b;
+  font-size: 13px;
+}
+
+footer a {
+  color: #50f5a9;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 12px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  nav a {
+    margin-left: 8px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding-top: 65px;
+  }
+}
+</style>
 </head>
+
 <body>
-  <main class="launcher">
-    <h1>NTL Launcher</h1>
-    <p>Your Minecraft launcher project starts here.</p>
-    <p>Simple. Fast. Built for mobile gamers.</p>
-    <button onclick="alert('Welcome to NTL Launcher!')">
-      Get Started
-    </button>
-  </main>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">NTL</div>
+    <span>NTL Launcher</span>
+  </div>
+
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#mods">Mods</a>
+    <a href="#download">Download</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="hero">
+    <div class="tag">🎮 MADE FOR MINECRAFT PLAYERS</div>
+
+    <h1>Welcome to<br><span>NTL Launcher</span></h1>
+
+    <p>
+      Your Minecraft Java launcher project.
+      Explore optimization features, mods and future
+      launcher downloads in one place.
+    </p>
+
+    <div class="buttons">
+      <a class="btn primary" href="#download">
+        ⬇ Download Launcher
+      </a>
+
+      <a class="btn secondary" href="#features">
+        Explore Features
+      </a>
+    </div>
+
+    <p class="note">
+      Mobile-friendly design • Project updates • Minecraft
+    </p>
+  </div>
+
+  <section id="features">
+    <h2 class="section-title">⚡ Features</h2>
+
+    <p class="section-desc">
+      Explore the planned features of NTL Launcher.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">🚀</div>
+        <h3>FPS Boost</h3>
+        <p>
+          Discover optimization tips and performance
+          mods for smoother Minecraft gameplay.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚙️</div>
+        <h3>Launcher Settings</h3>
+        <p>
+          Explore planned settings for memory,
+          game versions and launcher configuration.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Mobile Friendly</h3>
+        <p>
+          A responsive interface designed to work
+          on Android phones and larger screens.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="mods">
+    <h2 class="section-title">🧩 Mods & Optimization</h2>
+
+    <p class="section-desc">
+      Find information about Minecraft mods and
+      performance improvements.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Performance Mods</h3>
+        <p>
+          Learn about Fabric performance mods
+          compatible with your Minecraft version.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Resource Packs</h3>
+        <p>
+          Explore lightweight resource packs
+          for your Minecraft setup.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔧</div>
+        <h3>Game Optimization</h3>
+        <p>
+          Get tips for choosing settings based
+          on your device's capabilities.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="download-box">
+      <h2>📥 Download NTL Launcher</h2>
+
+      <p>
+        The launcher APK must be uploaded before
+        you can download and install it.
+      </p>
+
+      <a
+        class="btn primary"
+        href="https://github.com/jaatmunesh75-glitch/NTL-Launcher/releases"
+      >
+        Open Downloads
+      </a>
+
+      <p class="note">
+        If no APK release is available yet,
+        check back after the first release is published.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 NTL Launcher</p>
+  <p>Minecraft is a trademark of Mojang Studios.</p>
+  <p>
+    <a href="https://github.com/jaatmunesh75-glitch/NTL-Launcher">
+      View GitHub Project
+    </a>
+  </p>
+</footer>
+
 </body>
-</html>
+  </html>
